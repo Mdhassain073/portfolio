@@ -1,0 +1,215 @@
+/* ===========================================
+   GLOBAL ANIMATION ENGINE
+=========================================== */
+
+/* Fade Up */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+}
+
+/* Fade Down */
+
+.fade-down{
+
+    opacity:0;
+
+    transform:translateY(-60px);
+
+}
+
+/* Fade Left */
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-60px);
+
+}
+
+/* Fade Right */
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(60px);
+
+}
+
+/* Scale */
+
+.scale{
+
+    opacity:0;
+
+    transform:scale(.8);
+
+}
+
+/* Rotate */
+
+.rotate{
+
+    opacity:0;
+
+    transform:rotate(-10deg);
+
+}
+
+/* Blur */
+
+.blur{
+
+    opacity:0;
+
+    filter:blur(25px);
+
+}
+
+/* ===========================================
+   FLOATING
+=========================================== */
+
+.float{
+
+    animation:float 6s ease-in-out infinite;
+
+}
+
+.float-slow{
+
+    animation:floatSlow 10s ease-in-out infinite;
+
+}
+
+.float-fast{
+
+    animation:floatFast 4s ease-in-out infinite;
+
+}
+
+/* ===========================================
+   GLOW
+=========================================== */
+
+.glow{
+
+    animation:glow 4s infinite alternate;
+
+}
+
+.gold-glow{
+
+    animation:goldGlow 4s infinite alternate;
+
+}
+
+.blue-glow{
+
+    animation:blueGlow 4s infinite alternate;
+
+}
+
+/* ===========================================
+   ROTATION
+=========================================== */
+
+.rotate-slow{
+
+    animation:rotateSlow 25s linear infinite;
+
+}
+
+.rotate-fast{
+
+    animation:rotateFast 8s linear infinite;
+
+}
+
+/* ===========================================
+   PULSE
+=========================================== */
+
+.pulse{
+
+    animation:pulse 2.5s infinite;
+
+}
+
+.pulse-slow{
+
+    animation:pulseSlow 5s infinite;
+
+}
+
+/* ===========================================
+   HOVER LIFT
+=========================================== */
+
+.hover-lift{
+
+    transition:.4s;
+
+}
+
+.hover-lift:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* ===========================================
+   GLASS SHINE
+=========================================== */
+
+.shine{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.shine::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.18),
+
+    transparent
+
+    );
+
+    transition:1s;
+
+}
+
+.shine:hover::before{
+
+    left:160%;
+
+}
