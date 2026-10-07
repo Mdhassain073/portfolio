@@ -1,0 +1,494 @@
+/* ==========================================================
+   HERO SECTION - CYBER COMMAND CENTER & IDENTITY CARD
+   Author: Mohamed Hassain Akbar
+========================================================== */
+
+#hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 20% 30%, rgba(0, 245, 160, 0.05) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.05) 0%, transparent 60%);
+}
+
+.hero-container {
+    position: relative;
+    width: min(1280px, 92%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+    z-index: 5;
+}
+
+/* ==========================================================
+   HERO LEFT (TEXT & CONTENT)
+========================================================== */
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.bismillah {
+    font-family: 'Amiri', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    color: var(--gold);
+    margin-bottom: 12px;
+    text-shadow: 0 0 15px rgba(255, 209, 102, 0.4),
+                 0 0 35px rgba(255, 209, 102, 0.2);
+    animation: bismillahGlow 6s ease-in-out infinite;
+}
+
+@keyframes bismillahGlow {
+    0%, 100% { opacity: 0.9; text-shadow: 0 0 15px rgba(255, 209, 102, 0.4); }
+    50% { opacity: 1; text-shadow: 0 0 25px rgba(255, 209, 102, 0.7); }
+}
+
+.hero-small {
+    color: var(--primary);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-family: 'Space Grotesk', monospace;
+    margin-bottom: 14px;
+    background: rgba(0, 245, 160, 0.08);
+    border: 1px solid rgba(0, 245, 160, 0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.hero-title {
+    font-size: clamp(2.4rem, 4vw, 4.2rem);
+    line-height: 1.1;
+    text-align: left;
+    margin-bottom: 16px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.hero-typing {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    color: var(--secondary);
+    margin-bottom: 20px;
+    height: 38px;
+    font-family: 'Space Grotesk', monospace;
+    font-weight: 600;
+}
+
+.hero-description {
+    max-width: 620px;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #CBD5E1;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, var(--primary), #00d285);
+    color: #030712;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 25px rgba(0, 245, 160, 0.3);
+    transition: all var(--transition);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 245, 160, 0.45);
+    color: #030712;
+}
+
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(0, 245, 160, 0.3);
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    backdrop-filter: blur(12px);
+    transition: all var(--transition);
+}
+
+.secondary-btn:hover {
+    background: rgba(0, 245, 160, 0.12);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 245, 160, 0.15);
+}
+
+.hero-social {
+    display: flex;
+    gap: 16px;
+}
+
+.hero-social a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: all var(--transition);
+}
+
+.hero-social a:hover {
+    background: var(--primary);
+    color: #030712;
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 245, 160, 0.3);
+}
+
+/* ==========================================================
+   HERO RIGHT (3D OUT-OF-FRAME POP-OUT IDENTITY CARD)
+========================================================== */
+
+.hero-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card-container {
+    position: relative;
+    width: min(390px, 92%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+
+/* Live Operational Status Badge */
+.profile-status-badge {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(9, 13, 22, 0.95);
+    border: 1px solid rgba(0, 245, 160, 0.4);
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 20px rgba(0, 245, 160, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+    animation: pulseDot 1.5s infinite alternate;
+}
+
+@keyframes pulseDot {
+    from { opacity: 0.4; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+/* Sleek Cyber Profile Card Frame */
+.profile-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 0.82;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #090d16;
+    border: 2px solid rgba(0, 245, 160, 0.35);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 245, 160, 0.15);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    will-change: transform, box-shadow;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+/* Normal Smooth Cyber Hover Effect */
+.profile-card-container:hover .profile-card {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow: 0 35px 70px rgba(0, 245, 160, 0.3), 0 0 45px rgba(56, 189, 248, 0.3);
+}
+
+.profile-card-container:hover .profile-image {
+    transform: scale(1.05);
+    filter: brightness(1.05) contrast(1.03);
+}
+
+/* Laser Scanner Sweep Line */
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #00F5A0, #38BDF8, transparent);
+    box-shadow: 0 0 15px #00F5A0, 0 0 25px #00F5A0;
+    z-index: 10;
+    pointer-events: none;
+    animation: scannerSweep 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes scannerSweep {
+    0% { top: 0%; opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { top: 96%; opacity: 0; }
+}
+
+/* HUD Corner Bracket Accents */
+.hud-corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: #00F5A0;
+    border-style: solid;
+    pointer-events: none;
+    z-index: 8;
+}
+
+.hud-corner.top-left { top: 14px; left: 14px; border-width: 3px 0 0 3px; }
+.hud-corner.top-right { top: 14px; right: 14px; border-width: 3px 3px 0 0; }
+.hud-corner.bottom-left { bottom: 14px; left: 14px; border-width: 0 0 3px 3px; }
+.hud-corner.bottom-right { bottom: 14px; right: 14px; border-width: 0 3px 3px 0; }
+
+/* Floating Tactical Badges */
+.profile-tech-badge {
+    position: absolute;
+    background: rgba(9, 13, 22, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 245, 160, 0.4);
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 12;
+    transition: transform 0.3s ease;
+}
+
+.profile-tech-badge i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.profile-tech-badge span {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.badge-1 {
+    top: 12%;
+    left: -32px;
+    animation: floatBadge 4s ease-in-out infinite;
+}
+
+.badge-2 {
+    bottom: 30%;
+    right: -32px;
+    animation: floatBadge 4.5s ease-in-out infinite 0.5s;
+}
+
+.badge-3 {
+    bottom: 6%;
+    left: -24px;
+    animation: floatBadge 5s ease-in-out infinite 1s;
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Floating Orbital Icons */
+.floating-icons {
+    position: absolute;
+    inset: -30px;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.icon-item {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(0, 245, 160, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.1rem;
+    box-shadow: 0 0 20px rgba(0, 245, 160, 0.2);
+    animation: orbitFloat 6s ease-in-out infinite;
+}
+
+.item-1 { top: 5%; right: 10%; animation-delay: 0s; }
+.item-2 { top: 40%; left: -45px; animation-delay: 1.2s; }
+.item-3 { bottom: 20%; right: -35px; animation-delay: 2.4s; }
+.item-4 { bottom: -15px; left: 30%; animation-delay: 3.6s; }
+.item-5 { top: 25%; right: -25px; animation-delay: 4.8s; }
+
+@keyframes orbitFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.1); }
+}
+
+/* AI Core Background Rings */
+.ai-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.core-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px dashed rgba(0, 245, 160, 0.2);
+    animation: rotateRing 25s linear infinite;
+}
+
+.core-ring.ring2 {
+    inset: 35px;
+    border-style: solid;
+    border-color: rgba(56, 189, 248, 0.15);
+    animation-duration: 35s;
+    animation-direction: reverse;
+}
+
+.core-ring.ring3 {
+    inset: 70px;
+    border-style: dotted;
+    border-color: rgba(255, 209, 102, 0.15);
+    animation-duration: 45s;
+}
+
+@keyframes rotateRing {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+    transition: opacity var(--transition);
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-indicator span {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--primary), transparent);
+    animation: scrollMove 2s infinite;
+}
+
+@keyframes scrollMove {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.scroll-indicator p {
+    font-size: 0.75rem;
+    font-family: 'Space Grotesk', monospace;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-title, .hero-description {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .badge-1, .badge-2, .badge-3 {
+        display: none;
+    }
+}
