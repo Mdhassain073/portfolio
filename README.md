@@ -8,7 +8,7 @@ A modern, responsive, and animation-rich portfolio designed to showcase my journ
 
 ## 🌐 Live Demo
 
-**Website:** https://Mdhassain073.github.io/portfolio/
+**Website:** https://mdhassain073.github.io/portfolio/
 
 ---
 
